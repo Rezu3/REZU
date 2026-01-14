@@ -1,11 +1,5 @@
 const gkQuestions = [
-    // History
-    {
-        question: "সিন্ধু সভ্যতার কোন শহরটি 'মৃতের স্তূপ' নামে পরিচিত?",
-        options: ["হরপ্পা", "লোথাল", "মহেঞ্জোদারো", "কালিবঙ্গান"],
-        correctAnswer: 2,
-        explanation: "মহেঞ্জোদারো শহরটির একটি অংশ বহু স্তরে ধ্বংসাবশেষ ও দেহাবশেষ পাওয়ায় প্রত্নতাত্ত্বিকরা একে 'মৃতের স্তূপ' নাম দেন।"
-    },
+    
 
 ]
 
@@ -413,4 +407,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize the quiz when page loads
     initQuiz();
+
 });
