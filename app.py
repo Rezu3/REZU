@@ -1,9 +1,23 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Optional, যদি AJAX / API call থাকে
+
+# ------------------------------
+# Root redirect → Loading page
+# ------------------------------
+@app.route("/")
+def root():
+    # যেহেতু frontend loading.html Netlify এ থাকবে
+    return redirect("https://quizwithrezu.netlify.app/loading.html")
+
+# ------------------------------
+# Main Pages
+# ------------------------------
 
 # Home / Subject Selection Page
-@app.route("/")
+@app.route("/index")
 def index():
     return render_template("index.html")
 
@@ -22,5 +36,15 @@ def math():
 def gs():
     return render_template("gs.html")
 
+# ------------------------------
+# Backend Wake / Ping route
+# ------------------------------
+@app.route("/api/ping")
+def ping():
+    return "ok"
+
+# ------------------------------
+# Run server
+# ------------------------------
 if __name__ == "__main__":
     app.run(debug=True)
