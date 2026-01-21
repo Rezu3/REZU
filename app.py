@@ -1,33 +1,26 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Root redirect → Loading page
+# Home / Subject Selection Page
 @app.route("/")
-def root():
-    return redirect("https://quizwithrezu.netlify.app/loading.html")
-
-# Quiz pages (optional if you want Flask serve)
-@app.route("/index")
 def index():
     return render_template("index.html")
 
+# GK Quiz
 @app.route("/gk")
 def gk():
     return render_template("gk.html")
 
+# Math Quiz
 @app.route("/math")
 def math():
     return render_template("math.html")
 
+# Group C/D PYQ
 @app.route("/gs")
 def gs():
     return render_template("gs.html")
-
-# Backend wake / ping route
-@app.route("/api/ping")
-def ping():
-    return "ok"
 
 if __name__ == "__main__":
     app.run(debug=True)
