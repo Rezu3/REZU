@@ -1,34 +1,17 @@
+<!-- templates/loading.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Quiz with Rezu</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: #0f172a;
-      color: #e5e7eb;
-      font-family: Arial, sans-serif;
-    }
-    h1 { margin-bottom: 8px; color: #38bdf8; }
-    .spinner {
-      width: 45px; height: 45px;
-      border: 5px solid #334155;
-      border-top: 5px solid #38bdf8;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 20px 0;
-    }
-    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    .percent { font-size: 18px; font-weight: bold; color: #38bdf8; }
-    p { margin-top: 6px; font-size: 14px; color: #cbd5f5; }
-  </style>
+<meta charset="UTF-8">
+<title>Quiz with Rezu</title>
+<style>
+body { margin:0; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#0f172a; color:#e5e7eb; font-family:Arial,sans-serif; }
+h1 { color:#38bdf8; }
+.spinner { width:45px; height:45px; border:5px solid #334155; border-top:5px solid #38bdf8; border-radius:50%; animation:spin 1s linear infinite; margin:20px 0;}
+@keyframes spin { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }
+.percent { font-size:18px; font-weight:bold; color:#38bdf8; }
+p { font-size:14px; color:#cbd5f5; }
+</style>
 </head>
 <body>
 
@@ -42,25 +25,15 @@ let percent = 0;
 const percentEl = document.getElementById("percent");
 
 // fake smooth loading
-const interval = setInterval(() => {
-  if (percent < 90) {
-    percent++;
-    percentEl.textContent = percent + "%";
-  }
-}, 40);
+const interval = setInterval(()=>{ if(percent<90){percent++; percentEl.textContent = percent+"%";} },40);
 
-// wake up backend + finish
-fetch("https://rezu-1.onrender.com/api/ping")
-  .finally(() => {
-    clearInterval(interval);
-    percentEl.textContent = "100%";
-    setTimeout(() => {
-      // full quiz URL
-      window.location.href = "https://quizwithrezu.netlify.app/index.html";
-    }, 600);
-  });
+// wake backend
+fetch("/api/ping").finally(()=>{
+  clearInterval(interval);
+  percentEl.textContent="100%";
+  setTimeout(()=>{ window.location.href="/index"; },600); // quiz page route
+});
 </script>
 
 </body>
 </html>
-
