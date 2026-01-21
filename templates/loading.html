@@ -1,39 +1,396 @@
-<!-- templates/loading.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiz with Rezu</title>
 <style>
-body { margin:0; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#0f172a; color:#e5e7eb; font-family:Arial,sans-serif; }
-h1 { color:#38bdf8; }
-.spinner { width:45px; height:45px; border:5px solid #334155; border-top:5px solid #38bdf8; border-radius:50%; animation:spin 1s linear infinite; margin:20px 0;}
-@keyframes spin { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }
-.percent { font-size:18px; font-weight:bold; color:#38bdf8; }
-p { font-size:14px; color:#cbd5f5; }
+/* 기본 스타일 리셋 및 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #e5e7eb;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+/* 컨테이너 스타일 */
+.container {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* 헤더 스타일 */
+h1 {
+  color: #38bdf8;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+  background: linear-gradient(90deg, #38bdf8 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 40px;
+  text-align: center;
+  max-width: 90%;
+  line-height: 1.5;
+}
+
+/* 로딩 스피너 */
+.spinner-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 30px 0;
+}
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  border: 8px solid rgba(51, 65, 85, 0.2);
+  border-top: 8px solid #38bdf8;
+  border-radius: 50%;
+  animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
+}
+
+.spinner-inner {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 90px;
+  height: 90px;
+  border: 5px solid rgba(56, 189, 248, 0.1);
+  border-top: 5px solid #7dd3fc;
+  border-radius: 50%;
+  animation: spinReverse 1.5s ease-in-out infinite;
+}
+
+/* 프로그레스 퍼센트 */
+.percent-container {
+  position: relative;
+  margin: 25px 0;
+}
+
+.percent {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #38bdf8;
+  text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+  transition: all 0.3s ease;
+}
+
+.percent-label {
+  font-size: 1rem;
+  color: #94a3b8;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+/* 진행 상태 표시기 */
+.progress-bar {
+  width: 280px;
+  height: 8px;
+  background-color: rgba(51, 65, 85, 0.3);
+  border-radius: 10px;
+  margin: 30px auto 25px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+  border-radius: 10px;
+  transition: width 0.4s ease;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+/* 상태 메시지 */
+.status-message {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin-top: 20px;
+  min-height: 24px;
+  transition: all 0.3s ease;
+}
+
+.status-message span {
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+/* 풋터 */
+.footer {
+  margin-top: 40px;
+  color: #64748b;
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 80%;
+}
+
+/* 애니메이션 */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+@keyframes colorShift {
+  0% { color: #38bdf8; }
+  50% { color: #7dd3fc; }
+  100% { color: #38bdf8; }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+  }
+  
+  .spinner-container {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .spinner-inner {
+    width: 70px;
+    height: 70px;
+    top: 15px;
+    left: 15px;
+  }
+  
+  .percent {
+    font-size: 2.2rem;
+  }
+  
+  .progress-bar {
+    width: 220px;
+  }
+  
+  .status-message {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .spinner-container {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .spinner {
+    border-width: 6px;
+  }
+  
+  .spinner-inner {
+    width: 60px;
+    height: 60px;
+    top: 12px;
+    left: 12px;
+  }
+  
+  .progress-bar {
+    width: 200px;
+  }
+}
 </style>
 </head>
 <body>
-
-<h1>Quiz with Rezu</h1>
-<div class="spinner"></div>
-<div class="percent" id="percent">0%</div>
-<p>Preparing your quiz…</p>
+<div class="container">
+  <h1>Quiz with Rezu</h1>
+  <p class="subtitle">Get ready for an exciting quiz experience tailored just for you!</p>
+  
+  <div class="spinner-container">
+    <div class="spinner"></div>
+    <div class="spinner-inner"></div>
+  </div>
+  
+  <div class="percent-container">
+    <div class="percent" id="percent">0%</div>
+    <div class="percent-label">LOADING</div>
+  </div>
+  
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+  
+  <p class="status-message" id="statusMessage">Initializing quiz engine<span>.</span><span>.</span><span>.</span></p>
+  
+  <div class="footer">
+    Please wait while we prepare your personalized quiz questions
+  </div>
+</div>
 
 <script>
+// 요소 선택
+const percentEl = document.getElementById('percent');
+const progressFill = document.getElementById('progressFill');
+const statusMessage = document.getElementById('statusMessage');
+
+// 상태 메시지 배열
+const statusMessages = [
+  "Initializing quiz engine...",
+  "Loading questions database...",
+  "Preparing difficulty levels...",
+  "Setting up interactive features...",
+  "Almost ready...",
+  "Starting your quiz experience!"
+];
+
 let percent = 0;
-const percentEl = document.getElementById("percent");
+let messageIndex = 0;
 
-// fake smooth loading
-const interval = setInterval(()=>{ if(percent<90){percent++; percentEl.textContent = percent+"%";} },40);
+// 메시지 변경 함수
+function updateStatusMessage() {
+  statusMessage.innerHTML = statusMessages[messageIndex];
+  
+  // 점 애니메이션 추가
+  const dots = statusMessage.querySelectorAll('span');
+  dots.forEach((dot, index) => {
+    dot.style.animationDelay = `${index * 0.3}s`;
+  });
+  
+  messageIndex = (messageIndex + 1) % statusMessages.length;
+}
 
-// wake backend
-fetch("/api/ping").finally(()=>{
-  clearInterval(interval);
-  percentEl.textContent="100%";
-  setTimeout(()=>{ window.location.href="/index"; },600); // quiz page route
+// 가짜 부드러운 로딩 시뮬레이션
+const loadingInterval = setInterval(() => {
+  if (percent < 90) {
+    percent += 1;
+    percentEl.textContent = percent + "%";
+    progressFill.style.width = percent + "%";
+    
+    // 15%마다 상태 메시지 변경
+    if (percent % 15 === 0) {
+      updateStatusMessage();
+    }
+    
+    // 90% 이상에서 색상 변화
+    if (percent > 90) {
+      percentEl.style.animation = "colorShift 1.5s infinite";
+    }
+  }
+}, 40);
+
+// 백엔드 핑 (가짜 시뮬레이션)
+function pingBackend() {
+  // 실제 백엔드 호출 대신 시뮬레이션
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve("Backend is awake");
+    }, 800);
+  });
+}
+
+// 백엔드 호출 및 완료 처리
+pingBackend().finally(() => {
+  clearInterval(loadingInterval);
+  
+  // 100%까지 애니메이션
+  const finishInterval = setInterval(() => {
+    if (percent < 100) {
+      percent += 1;
+      percentEl.textContent = percent + "%";
+      progressFill.style.width = percent + "%";
+    } else {
+      clearInterval(finishInterval);
+      
+      // 완료 상태 업데이트
+      statusMessage.innerHTML = "Quiz ready! Redirecting...";
+      percentEl.style.color = "#4ade80";
+      percentEl.style.textShadow = "0 0 15px rgba(74, 222, 128, 0.4)";
+      
+      // 퀴즈 페이지로 리디렉션 (시뮬레이션)
+      setTimeout(() => {
+        // 실제로는 여기서 리디렉션
+        // window.location.href = "/index";
+        
+        // 데모 목적으로 성공 메시지 표시
+        statusMessage.innerHTML = "Quiz loaded successfully! (Demo)";
+        document.querySelector('.footer').textContent = "This is a demo. In the real app, you'd be redirected to the quiz.";
+        
+        // 데모용 버튼 추가
+        const demoBtn = document.createElement('button');
+        demoBtn.textContent = "Try Again";
+        demoBtn.style.cssText = `
+          margin-top: 25px;
+          padding: 12px 30px;
+          background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+          color: white;
+          border: none;
+          border-radius: 50px;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+          transition: all 0.3s ease;
+        `;
+        demoBtn.onmouseover = () => {
+          demoBtn.style.transform = "translateY(-2px)";
+          demoBtn.style.boxShadow = "0 8px 20px rgba(56, 189, 248, 0.4)";
+        };
+        demoBtn.onmouseout = () => {
+          demoBtn.style.transform = "translateY(0)";
+          demoBtn.style.boxShadow = "0 5px 15px rgba(56, 189, 248, 0.3)";
+        };
+        demoBtn.onclick = () => {
+          window.location.reload();
+        };
+        document.querySelector('.container').appendChild(demoBtn);
+      }, 1000);
+    }
+  }, 20);
 });
 </script>
-
 </body>
 </html>
