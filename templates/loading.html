@@ -6,79 +6,74 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiz with Rezu</title>
 <style>
-  /* Basic reset */
+  /* Reset & global */
   * { margin:0; padding:0; box-sizing:border-box; }
-
   body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg,#0f172a,#1e293b);
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #e5e7eb;
   }
 
   h1 {
-    font-size: 2.2rem;
-    color: #38bdf8;
+    font-size:2rem;
+    color:#38bdf8;
     margin-bottom: 12px;
-    text-align: center;
+    text-align:center;
   }
 
   /* Spinner */
   .spinner {
-    width: 60px;
-    height: 60px;
-    border: 6px solid #334155;
-    border-top: 6px solid #38bdf8;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: 20px 0;
+    width:60px;
+    height:60px;
+    border:6px solid #334155;
+    border-top:6px solid #38bdf8;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin:20px 0;
   }
 
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+  @keyframes spin { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }
 
-  /* Percentage bar container */
+  /* Progress container */
   .progress-container {
-    width: 70%;
-    max-width: 300px;
-    height: 12px;
-    background: #334155;
-    border-radius: 6px;
-    overflow: hidden;
-    margin-bottom: 12px;
+    width:70%;
+    max-width:300px;
+    height:14px;
+    background:#334155;
+    border-radius:7px;
+    overflow:hidden;
+    margin-bottom:12px;
   }
 
-  /* Animated progress bar */
   .progress-bar {
-    height: 100%;
-    width: 0%;
-    background: #38bdf8;
-    border-radius: 6px;
+    height:100%;
+    width:0%;
+    background: linear-gradient(to right, #38bdf8, #22d3ee);
+    border-radius:7px;
     transition: width 0.2s ease;
   }
 
   .percent {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #38bdf8;
-    margin-bottom: 8px;
+    font-size:1.1rem;
+    font-weight:bold;
+    color:#38bdf8;
+    margin-bottom:8px;
   }
 
   p {
-    font-size: 0.95rem;
-    color: #cbd5f5;
-    text-align: center;
+    font-size:0.95rem;
+    color:#cbd5f5;
+    text-align:center;
   }
 
-  /* Responsive */
+  /* Mobile responsive */
   @media(max-width:400px){
-    h1 { font-size: 1.8rem; }
+    h1 { font-size:1.5rem; }
     .spinner { width:50px; height:50px; border-width:5px; }
   }
 </style>
@@ -100,27 +95,31 @@ let percent = 0;
 const percentEl = document.getElementById("percent");
 const progressBar = document.getElementById("progress-bar");
 
-// smooth loading animation
+// Minimum spinner time (covers slow backend wake)
+const minLoadTime = 2000;
+const startTime = Date.now();
+
+// Smooth fake loading
 const interval = setInterval(()=>{
   if(percent < 90){
     percent++;
-    percentEl.textContent = percent + "%";
-    progressBar.style.width = percent + "%";
+    percentEl.textContent = percent+"%";
+    progressBar.style.width = percent+"%";
   }
 }, 40);
 
-// wake backend
+// Backend wakeup (hidden)
 fetch("/api/ping").finally(()=>{
-  clearInterval(interval);
-  percent = 100;
-  percentEl.textContent = "100%";
-  progressBar.style.width = "100%";
+  const elapsed = Date.now() - startTime;
+  const waitTime = Math.max(0, minLoadTime - elapsed);
   setTimeout(()=>{
-    window.location.href="/index"; // quiz page route
-  }, 600);
+    percent = 100;
+    percentEl.textContent = "100%";
+    progressBar.style.width="100%";
+    window.location.href="/index"; // Quiz page route
+  }, waitTime);
 });
 </script>
 
 </body>
 </html>
-
