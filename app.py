@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect
-from flask_cors import CORS
+ 
 
 app = Flask(__name__)
 CORS(app)  # Optional, যদি AJAX / API call থাকে
@@ -48,3 +48,4 @@ def ping():
 # ------------------------------
 if __name__ == "__main__":
     app.run(debug=True)
+
