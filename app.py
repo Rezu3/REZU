@@ -2,10 +2,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Loading page route
-@app.route("/")
-def loading():
-    return render_template("loading.html")
+ 
 
 # Quiz pages
 @app.route("/index")
@@ -31,3 +28,4 @@ def ping():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
