@@ -2,8 +2,6 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
- 
-
 # Quiz pages
 @app.route("/index")
 def index():
@@ -21,11 +19,7 @@ def math():
 def gs():
     return render_template("gs.html")
 
-# Backend wake
-@app.route("/api/ping")
-def ping():
-    return "ok"
-
-if __name__ == "__main__":
+ if __name__ == "__main__":
     app.run(debug=True)
+
 
