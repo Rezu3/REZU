@@ -32,7 +32,7 @@ const gkQuestions = [
         correctAnswer: 0
     },
     {
-        question: "কম্পিউটারের "প্রোগ্রামেবল" ধারণার জনক কে?",
+        question: "কম্পিউটারের প্রোগ্রামেবল ধারণার জনক কে?",
         options: ["চার্লস ব্যাবেজ", "অ্যালান টুরিং", "জন ভন নিউম্যান", "অ্যাডা লাভলেস"],
         correctAnswer: 0
     },
@@ -671,6 +671,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initQuiz();
 
 });
+
 
 
 
