@@ -517,7 +517,7 @@ document.addEventListener('DOMContentLoaded', function() {
             questionTimer.stopTimer();
         }
         
-        questionTimer = initTimer(60, onTimeUp);
+        questionTimer = initTimer(30, onTimeUp);
         if (questionTimer) {
             questionTimer.startTimer();
         }
@@ -674,6 +674,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initQuiz();
 
 });
+
 
 
 
