@@ -1,156 +1,156 @@
 const gkQuestions = [
     {
-        question: "The probability of the sample space S is:",
+        question: "1. The probability of the sample space S is:",
         options: ["0", "1", "Depends on experiment", "Infinite"],
         correctAnswer: 1
     },
     {
-        question: "A random variable that takes countable values is called:",
+        question: "2. A random variable that takes countable values is called:",
         options: ["Continuous", "Discrete", "Mixed", "Constant"],
         correctAnswer: 1
     },
     {
-        question: "Which of the following is an example of a continuous random variable?",
+        question: "3. Which of the following is an example of a continuous random variable?",
         options: ["Number of students", "Number of heads in coin toss", "Height of a person", "Number of cars"],
         correctAnswer: 2
     },
     {
-        question: "For a discrete random variable X, the sum of all probabilities is:",
+        question: "4. For a discrete random variable X, the sum of all probabilities is:",
         options: ["0", "1", "Less than 1", "Greater than 1"],
         correctAnswer: 1
     },
     {
-        question: "Probability density function (PDF) applies to:",
+        question: "5. Probability density function (PDF) applies to:",
         options: ["Discrete variables", "Continuous variables", "Both", "None"],
         correctAnswer: 1
     },
     {
-        question: "The CDF of a random variable X is defined as:",
+        question: "6. The CDF of a random variable X is defined as:",
         options: ["P(X = x)", "P(X ≥ x)", "P(X ≤ x)", "P(X > x)"],
         correctAnswer: 2
     },
     {
-        question: "The limits of a CDF F(x) are:",
+        question: "7. The limits of a CDF F(x) are:",
         options: ["F(-∞)=1, F(∞)=0", "F(-∞)=0, F(∞)=1", "Both 0", "Both 1"],
         correctAnswer: 1
     },
     {
-        question: "Which condition must a PDF satisfy?",
+        question: "8. Which condition must a PDF satisfy?",
         options: ["f(x) ≥ 0", "∫f(x)dx = 1", "Both A and B", "None"],
         correctAnswer: 2
     },
     {
-        question: "Which is true for PMF?",
+        question: "9. Which is true for PMF?",
         options: ["Defined for continuous variables", "Defined for discrete variables", "Always constant", "Always increasing"],
         correctAnswer: 1
     },
     {
-        question: "Expectation of a discrete random variable is:",
+        question: "10. Expectation of a discrete random variable is:",
         options: ["∑xp(x)", "∫ x dx", "∑p(x)", "∫ p(x)dx"],
         correctAnswer: 0
     },
     {
-        question: "If E(X) = 5, then E(2X) =",
+        question: "11. If E(X) = 5, then E(2X) =",
         options: ["5", "10", "2", "25"],
         correctAnswer: 1
     },
     {
-        question: "If E(X) = 3, then E(X+4) =",
+        question: "12. If E(X) = 3, then E(X+4) =",
         options: ["3", "4", "7", "12"],
         correctAnswer: 2
     },
     {
-        question: "The r-th raw moment is:",
+        question: "13. The r-th raw moment is:",
         options: ["E(X^r)", "E((X−μ)^r)", "rX", "X^r"],
         correctAnswer: 0
     },
     {
-        question: "The first raw moment about origin is:",
+        question: "14. The first raw moment about origin is:",
         options: ["Variance", "Mean", "2 Variance", "None"],
         correctAnswer: 1
     },
     {
-        question: "The second central moment represents:",
+        question: "15. The second central moment represents:",
         options: ["Mean", "Variance", "Expectation", "Median"],
         correctAnswer: 1
     },
     {
-        question: "Variance is defined as:",
+        question: "16. Variance is defined as:",
         options: ["E(X)", "E(X²)", "E[(X−μ)²]", "(E(X))²"],
         correctAnswer: 2
     },
     {
-        question: "Relation between variance and expectation:",
+        question: "17. Relation between variance and expectation:",
         options: ["Var(X) = E(X²)−[E(X)]²", "Var(X) = E(X)", "Var(X) = E(X²)", "None"],
         correctAnswer: 0
     },
     {
-        question: "If X is discrete with p(1)=0.3, p(2)=0.7, then E(X) =",
+        question: "18. If X is discrete with p(1)=0.3, p(2)=0.7, then E(X) =",
         options: ["1.3", "1.7", "2", "0.7"],
         correctAnswer: 1
     },
     {
-        question: "The total area under a PDF curve is:",
+        question: "19. The total area under a PDF curve is:",
         options: ["0", "1", "Infinite", "Depends"],
         correctAnswer: 1
     },
     {
-        question: "The third central moment is related to:",
+        question: "20. The third central moment is related to:",
         options: ["Mean", "Variance", "2 Raw Moment", "None"],
         correctAnswer: 3
     },
     {
-        question: "If E(X)=4, E(X²)=20, then Var(X) =",
+        question: "21. If E(X)=4, E(X²)=20, then Var(X) =",
         options: ["4", "16", "20", "36"],
         correctAnswer: 0
     },
     {
-        question: "If Var(X)=9 then standard deviation is:",
+        question: "22. If Var(X)=9 then standard deviation is:",
         options: ["3", "81", "6", "18"],
         correctAnswer: 0
     },
     {
-        question: "If Y=3X, then Var(Y) =",
+        question: "23. If Y=3X, then Var(Y) =",
         options: ["3Var(X)", "9Var(X)", "Var(X)", "6Var(X)"],
         correctAnswer: 1
     },
     {
-        question: "Binomial distribution depends on parameters:",
+        question: "24. Binomial distribution depends on parameters:",
         options: ["n, p", "n, μ", "p, μ", "Only n"],
         correctAnswer: 0
     },
     {
-        question: "Mean of a binomial distribution is:",
+        question: "25. Mean of a binomial distribution is:",
         options: ["np", "n/p", "p/n", "n + p"],
         correctAnswer: 0
     },
     {
-        question: "A binomial experiment requires:",
+        question: "26. A binomial experiment requires:",
         options: ["Infinite trials", "Independent trials", "Continuous outcomes", "Negative probabilities"],
         correctAnswer: 1
     },
     {
-        question: "Mean and variance of Poisson distribution are:",
+        question: "27. Mean and variance of Poisson distribution are:",
         options: ["Both equal to μ", "Mean = μ, Variance = 2μ", "Mean = 2μ, Variance = μ", "Both zero"],
         correctAnswer: 0
     },
     {
-        question: "X takes values 1,2,3 with probabilities 0.2,0.5,0.3. Find E(X):",
+        question: "28. X takes values 1,2,3 with probabilities 0.2,0.5,0.3. Find E(X):",
         options: ["2.1", "3.2", "1.1", "None"],
         correctAnswer: 0
     },
     {
-        question: "X takes values 1,2,3 with probabilities 0.2,0.5,0.3. Find Var(X):",
+        question: "29. X takes values 1,2,3 with probabilities 0.2,0.5,0.3. Find Var(X):",
         options: ["0.49", "0.42", "4.2", "4.9"],
         correctAnswer: 0
     },
     {
-        question: "If mean=3, find third central moment (X=2,3,4; p=0.3,0.4,0.3):",
+        question: "30. If mean=3, find third central moment:",
         options: ["2", "0", "1", "4"],
         correctAnswer: 1
     },
     {
-        question: "Second raw moment (X=1,2; p=0.6,0.4):",
+        question: "31. Second raw moment (X=1,2; p=0.6,0.4):",
         options: ["3.2", "1.2", "2.2", "4.2"],
         correctAnswer: 2
     }
