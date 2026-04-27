@@ -1,253 +1,158 @@
 const gkQuestions = [
     {
-        question: "ভারতের মোট ভৌগোলিক এলাকার কত শতাংশ পলি মাটি দ্বারা আবৃত?",
-        options: ["২৪%", "৪০%", "৪৩%", "৫০%"],
+        question: "The probability of the sample space S is:",
+        options: ["0", "1", "Depends on experiment", "Infinite"],
+        correctAnswer: 1
+    },
+    {
+        question: "A random variable that takes countable values is called:",
+        options: ["Continuous", "Discrete", "Mixed", "Constant"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which of the following is an example of a continuous random variable?",
+        options: ["Number of students", "Number of heads in coin toss", "Height of a person", "Number of cars"],
         correctAnswer: 2
     },
     {
-        question: "কোন মাটিকে 'রেগুর' মাটি বলা হয়?",
-        options: ["লাল মাটি", "কৃষ্ণ মৃত্তিকা", "পলি মাটি", "ল্যাটেরাইট মাটি"],
+        question: "For a discrete random variable X, the sum of all probabilities is:",
+        options: ["0", "1", "Less than 1", "Greater than 1"],
         correctAnswer: 1
     },
     {
-        question: "ভারতের কোন অঞ্চলে ল্যাটেরাইট মাটি সবচেয়ে বেশি দেখা যায়?",
-        options: ["পশ্চিমঘাট পর্বতমালা", "গঙ্গা সমভূমি", "থর মরুভূমি", "সুন্দরবন"],
-        correctAnswer: 0
+        question: "Probability density function (PDF) applies to:",
+        options: ["Discrete variables", "Continuous variables", "Both", "None"],
+        correctAnswer: 1
     },
     {
-        question: "কৃষ্ণ মৃত্তিকা কী চাষের জন্য সবচেয়ে উপযোগী?",
-        options: ["ধান", "গম", "তুলো", "চা"],
+        question: "The CDF of a random variable X is defined as:",
+        options: ["P(X = x)", "P(X ≥ x)", "P(X ≤ x)", "P(X > x)"],
         correctAnswer: 2
     },
     {
-        question: "ভারতের কেন্দ্রীয় মৃত্তিকা সংরক্ষণ বোর্ড কত সালে প্রতিষ্ঠিত হয়?",
-        options: ["১৯৫৩", "১৯৬০", "১৯৬৫", "১৯৭০"],
+        question: "The limits of a CDF F(x) are:",
+        options: ["F(-∞)=1, F(∞)=0", "F(-∞)=0, F(∞)=1", "Both 0", "Both 1"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which condition must a PDF satisfy?",
+        options: ["f(x) ≥ 0", "∫f(x)dx = 1", "Both A and B", "None"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which is true for PMF?",
+        options: ["Defined for continuous variables", "Defined for discrete variables", "Always constant", "Always increasing"],
+        correctAnswer: 1
+    },
+    {
+        question: "Expectation of a discrete random variable is:",
+        options: ["∑xp(x)", "∫ x dx", "∑p(x)", "∫ p(x)dx"],
         correctAnswer: 0
     },
     {
-        question: "লাল মাটির রঙ লাল হওয়ার প্রধান কারণ কী?",
-        options: ["ম্যাগনেসিয়াম", "ফেরিক অক্সাইড", "জৈব পদার্থ", "নাইট্রোজেন"],
+        question: "If E(X) = 5, then E(2X) =",
+        options: ["5", "10", "2", "25"],
         correctAnswer: 1
     },
     {
-        question: "কোন মাটিকে 'স্বতঃ-চাষযোগ্য' মাটি বলা হয়?",
-        options: ["পলি মাটি", "কৃষ্ণ মৃত্তিকা", "ল্যাটেরাইট", "মরু মাটি"],
-        correctAnswer: 1
+        question: "If E(X) = 3, then E(X+4) =",
+        options: ["3", "4", "7", "12"],
+        correctAnswer: 2
     },
     {
-        question: "ভারতের কোন রাজ্যে সবচেয়ে বেশি ল্যাটেরাইট মাটি দেখা যায়?",
-        options: ["কেরালা", "পশ্চিমবঙ্গ", "উত্তরপ্রদেশ", "পাঞ্জাব"],
+        question: "The r-th raw moment is:",
+        options: ["E(X^r)", "E((X−μ)^r)", "rX", "X^r"],
         correctAnswer: 0
     },
     {
-        question: "পুরানো পলি মাটিকে কী বলা হয়?",
-        options: ["খাদার", "ভাঙ্গর", "ভাবর", "তেরাই"],
+        question: "The first raw moment about origin is:",
+        options: ["Variance", "Mean", "2 Variance", "None"],
         correctAnswer: 1
     },
     {
-        question: "নতুন পলি মাটিকে কী বলা হয়?",
-        options: ["খাদার", "ভাঙ্গর", "ভাবর", "তেরাই"],
+        question: "The second central moment represents:",
+        options: ["Mean", "Variance", "Expectation", "Median"],
+        correctAnswer: 1
+    },
+    {
+        question: "Variance is defined as:",
+        options: ["E(X)", "E(X²)", "E[(X−μ)²]", "(E(X))²"],
+        correctAnswer: 2
+    },
+    {
+        question: "Relation between variance and expectation:",
+        options: ["Var(X) = E(X²)−[E(X)]²", "Var(X) = E(X)", "Var(X) = E(X²)", "None"],
         correctAnswer: 0
     },
     {
-        question: "মরু মৃত্তিকা ভারতের প্রধানত কোন রাজ্যে দেখা যায়?",
-        options: ["বিহার", "রাজস্থান", "অরুণাচল প্রদেশ", "তামিলনাড়ু"],
+        question: "If X is discrete with p(1)=0.3, p(2)=0.7, then E(X) =",
+        options: ["1.3", "1.7", "2", "0.7"],
         correctAnswer: 1
     },
     {
-        question: "কোন মাটিতে নাইট্রোজেন ও হিউমাস কম থাকে?",
-        options: ["পলি মাটি", "কৃষ্ণ মৃত্তিকা", "লাল মাটি", "সবগুলিই সঠিক"],
+        question: "The total area under a PDF curve is:",
+        options: ["0", "1", "Infinite", "Depends"],
+        correctAnswer: 1
+    },
+    {
+        question: "The third central moment is related to:",
+        options: ["Mean", "Variance", "2 Raw Moment", "None"],
         correctAnswer: 3
     },
     {
-        question: "ল্যাটেরাইট মাটিতে প্রধানত কোন ফসল চাষ করা হয়?",
-        options: ["কাজু বাদাম", "ধান", "গম", "সরিষা"],
+        question: "If E(X)=4, E(X²)=20, then Var(X) =",
+        options: ["4", "16", "20", "36"],
         correctAnswer: 0
     },
     {
-        question: "ভারতের কোন অঞ্চলে পার্বত্য মৃত্তিকা বেশি দেখা যায়?",
-        options: ["হিমালয় অঞ্চল", "দাক্ষিণাত্যের মালভূমি", "উপকূলবর্তী অঞ্চল", "গঙ্গা সমভূমি"],
+        question: "If Var(X)=9 then standard deviation is:",
+        options: ["3", "81", "6", "18"],
         correctAnswer: 0
     },
     {
-        question: "লবণাক্ত মাটিকে কী বলা হয়?",
-        options: ["রেহ বা কালার", "ভাঙ্গর", "খাদার", "রেগুর"],
-        correctAnswer: 0
-    },
-    {
-        question: "চা চাষের জন্য কোন মাটি সবচেয়ে উপযোগী?",
-        options: ["কৃষ্ণ মৃত্তিকা", "পার্বত্য মৃত্তিকা", "মরু মাটি", "পলি মাটি"],
+        question: "If Y=3X, then Var(Y) =",
+        options: ["3Var(X)", "9Var(X)", "Var(X)", "6Var(X)"],
         correctAnswer: 1
     },
     {
-        question: "কোন মাটিতে জলধারণ ক্ষমতা সবচেয়ে বেশি?",
-        options: ["পলি মাটি", "কৃষ্ণ মৃত্তিকা", "লাল মাটি", "বালুকাময় মাটি"],
-        correctAnswer: 1
-    },
-    {
-        question: "ভারতের মৃত্তিকা সমীক্ষা বিভাগ (Soil Survey of India) কোথায় অবস্থিত?",
-        options: ["দিল্লি", "নাগপুর", "কলকাতা", "মুম্বাই"],
-        correctAnswer: 1
-    },
-    {
-        question: "ভারতের কোন রাজ্যে সবচেয়ে বেশি পলি মাটি রয়েছে?",
-        options: ["উত্তরপ্রদেশ", "রাজস্থান", "কেরালা", "তামিলনাড়ু"],
+        question: "Binomial distribution depends on parameters:",
+        options: ["n, p", "n, μ", "p, μ", "Only n"],
         correctAnswer: 0
     },
     {
-        question: "পিট বা জলাভূমি মৃত্তিকা কোথায় দেখা যায়?",
-        options: ["পশ্চিমবঙ্গ", "কেরালা", "উড়িষ্যা", "সবগুলোই সঠিক"],
-        correctAnswer: 3
+        question: "Mean of a binomial distribution is:",
+        options: ["np", "n/p", "p/n", "n + p"],
+        correctAnswer: 0
     },
     {
-        question: "কোন মাটিকে 'পরিবাহিত মাটি' বলা হয়?",
-        options: ["কৃষ্ণ মৃত্তিকা", "লাল মাটি", "পলি মাটি", "ল্যাটেরাইট"],
+        question: "A binomial experiment requires:",
+        options: ["Infinite trials", "Independent trials", "Continuous outcomes", "Negative probabilities"],
+        correctAnswer: 1
+    },
+    {
+        question: "Mean and variance of Poisson distribution are:",
+        options: ["Both equal to μ", "Mean = μ, Variance = 2μ", "Mean = 2μ, Variance = μ", "Both zero"],
+        correctAnswer: 0
+    },
+    {
+        question: "X takes values 1,2,3 with probabilities 0.2,0.5,0.3. Find E(X):",
+        options: ["2.1", "3.2", "1.1", "None"],
+        correctAnswer: 0
+    },
+    {
+        question: "X takes values 1,2,3 with probabilities 0.2,0.5,0.3. Find Var(X):",
+        options: ["0.49", "0.42", "4.2", "4.9"],
+        correctAnswer: 0
+    },
+    {
+        question: "If mean=3, find third central moment (X=2,3,4; p=0.3,0.4,0.3):",
+        options: ["2", "0", "1", "4"],
+        correctAnswer: 1
+    },
+    {
+        question: "Second raw moment (X=1,2; p=0.6,0.4):",
+        options: ["3.2", "1.2", "2.2", "4.2"],
         correctAnswer: 2
-    },
-    {
-        question: "মাটির ক্ষয় রোধ করার সর্বোত্তম উপায় কোনটি?",
-        options: ["বনসৃজন", "অধিক চাষ", "পশুচারণ", "জলাশয় ভরাট"],
-        correctAnswer: 0
-    },
-    {
-        question: "ভারতের মৃত্তিকার প্রধান প্রকারভেদ কয়টি?",
-        options: ["৫", "৬", "৮", "১০"],
-        correctAnswer: 2
-    },
-    {
-        question: "কৃষ্ণ মৃত্তিকা কোন শিলা থেকে তৈরি?",
-        options: ["ব্যাসল্ট", "গ্রানাইট", "চুনাপাথর", "বালি পাথর"],
-        correctAnswer: 0
-    },
-    {
-        question: "কোন মাটিতে পটাশ ও চুন বেশি থাকে?",
-        options: ["কৃষ্ণ মৃত্তিকা", "লাল মাটি", "ল্যাটেরাইট", "পার্বত্য"],
-        correctAnswer: 0
-    },
-    {
-        question: "শুষ্ক ও আর্দ্র আবহাওয়ার পর্যায়ক্রমে পরিবর্তনের ফলে কোন মাটির সৃষ্টি হয়?",
-        options: ["কৃষ্ণ মৃত্তিকা", "ল্যাটেরাইট মাটি", "মরু মাটি", "লাল মাটি"],
-        correctAnswer: 1
-    },
-    {
-        question: "মাটির অম্লতা পরিমাপ করার একক কী?",
-        options: ["pH মান", "ফারেনহাইট", "মিটার", "লিটার"],
-        correctAnswer: 0
-    },
-    {
-        question: "ভারতে কোন মৃত্তিকা সবচেয়ে বেশি অঞ্চল জুড়ে রয়েছে?",
-        options: ["লাল মাটি", "কৃষ্ণ মৃত্তিকা", "পলি মাটি", "ল্যাটেরাইট"],
-        correctAnswer: 2
-    },
-    {
-        question: "কোন মাটি চুন ও জৈব পদার্থের অভাব দেখা যায়?",
-        options: ["ল্যাটেরাইট মাটি", "কৃষ্ণ মৃত্তিকা", "পলি মাটি", "পার্বত্য"],
-        correctAnswer: 0
-    },
-    {
-        question: "মরু মৃত্তিকায় কীসের অভাব থাকে?",
-        options: ["আর্দ্রতা", "হিউমাস", "নাইট্রোজেন", "সবগুলোই সঠিক"],
-        correctAnswer: 3
-    },
-    {
-        question: "পশ্চিমবঙ্গের গঙ্গার উত্তর দিকের নবীন পলিমাটিকে কী বলে?",
-        options: ["তরাই", "ডুয়ার্স", "বরেন্দ্রভূমি", "খাদার"],
-        correctAnswer: 0
-    },
-    {
-        question: "ভারতের মরু অঞ্চলে মাটির গঠন সাধারণত কেমন হয়?",
-        options: ["বালুকাময়", "কাদাময়", "পলিযুক্ত", "পাথুরে"],
-        correctAnswer: 0
-    },
-    {
-        question: "কোন মাটিতে ধান চাষ ভালো হয়?",
-        options: ["পলি মাটি", "কৃষ্ণ মৃত্তিকা", "ল্যাটেরাইট", "মরু মাটি"],
-        correctAnswer: 0
-    },
-    {
-        question: "কাঁকরযুক্ত বা নুড়িযুক্ত মাটি কোন এলাকায় বেশি দেখা যায়?",
-        options: ["ভাবর অঞ্চলে", "ডেল্টা অঞ্চলে", "উপকূলে", "মালভূমিতে"],
-        correctAnswer: 0
-    },
-    {
-        question: "মাটির হিউমাস তৈরির প্রধান উৎস কী?",
-        options: ["পচা পাতা ও মৃত প্রাণী", "বালু", "খনিজ পাথর", "জল"],
-        correctAnswer: 0
-    },
-    {
-        question: "ল্যাটেরাইট মাটি তৈরিতে কোন প্রক্রিয়ার ভূমিকা বেশি?",
-        options: ["লিচিং", "অক্সিডেশন", "হাইড্রোলাইসিস", "সিলিনেশন"],
-        correctAnswer: 0
-    },
-    {
-        question: "কোথায় ‘রেহ’ বা লবণের আস্তরণ দেখা যায়?",
-        options: ["সেচযুক্ত মরুভূমি এলাকায়", "পাহাড়ি এলাকায়", "বনভূমিতে", "উপকূলে"],
-        correctAnswer: 0
-    },
-    {
-        question: "ভারতের মৃত্তিকা বিজ্ঞান বা Soil Science কে কী বলা হয়?",
-        options: ["পেডোলজি", "ভূতত্ত্ব", "জীববিজ্ঞান", "উদ্ভিদবিজ্ঞান"],
-        correctAnswer: 0
-    },
-    {
-        question: "কোন মাটিতে আখের চাষ ভালো হয়?",
-        options: ["কৃষ্ণ মৃত্তিকা", "মরু মাটি", "পার্বত্য মাটি", "লাল মাটি"],
-        correctAnswer: 0
-    },
-    {
-        question: "ভারতের অববাহিকা অঞ্চলে কী ধরনের মাটি সবচেয়ে বেশি?",
-        options: ["পলি মাটি", "কৃষ্ণ মৃত্তিকা", "ল্যাটেরাইট", "লাল মাটি"],
-        correctAnswer: 0
-    },
-    {
-        question: "কৃষ্ণ মৃত্তিকার আর এক নাম কী?",
-        options: ["চেরনোজেম", "পডজোল", "ল্যাটেরাইট", "পেডোক্যাল"],
-        correctAnswer: 0
-    },
-    {
-        question: "ভারতের অধিকাংশ মৃত্তিকার প্রধান উপাদান হলো?",
-        options: ["বালি", "পলি ও কাদা", "নুড়ি", "পাথর"],
-        correctAnswer: 1
-    },
-    {
-        question: "মাটির ক্ষয় বা Soil Erosion কমানোর জন্য 'ফালি চাষ' (Strip Cropping) করা হয় কোথায়?",
-        options: ["ঢালু অঞ্চলে", "সমতল অঞ্চলে", "মরুভূমিতে", "উপকূলে"],
-        correctAnswer: 0
-    },
-    {
-        question: "কোন মাটিকে আম্লিক মৃত্তিকা বা Acidic Soil বলা হয়?",
-        options: ["ল্যাটেরাইট", "পলি", "কৃষ্ণ", "মরু"],
-        correctAnswer: 0
-    },
-    {
-        question: "তামিলনাড়ুর বড় অংশ জুড়ে কী মাটি দেখা যায়?",
-        options: ["লাল মাটি", "কৃষ্ণ মৃত্তিকা", "ল্যাটেরাইট", "পলি মাটি"],
-        correctAnswer: 0
-    },
-    {
-        question: "পলি মাটির মধ্যে কোন উপাদানটি বেশি থাকে?",
-        options: ["পটাশ", "নাইট্রোজেন", "ফসফরাস", "ম্যাগনেসিয়াম"],
-        correctAnswer: 0
-    },
-    {
-        question: "ভারতের পাহাড়ি ঢালে কোন ধরণের মাটি দেখা যায়?",
-        options: ["পার্বত্য মৃত্তিকা", "পলি মাটি", "কৃষ্ণ মৃত্তিকা", "মরু মাটি"],
-        correctAnswer: 0
-    },
-    {
-        question: "কোন মাটির গঠন সূক্ষ্ম দানাদার?",
-        options: ["পলি মাটি", "কৃষ্ণ মৃত্তিকা", "লাল মাটি", "ল্যাটেরাইট"],
-        correctAnswer: 1
-    },
-    {
-        question: "কোন মাটিতে আয়রন অক্সাইড বেশি থাকে?",
-        options: ["লাল মাটি", "পলি মাটি", "মরু মাটি", "পার্বত্য মাটি"],
-        correctAnswer: 0
-    },
-    {
-        question: "মাটির স্থায়িত্ব ও উর্বরতা বজায় রাখতে কোনটি জরুরি?",
-        options: ["শস্য আবর্তন", "অধিক রাসায়নিক সার", "বন নিধন", "জমিতে জল জমে থাকা"],
-        correctAnswer: 0
     }
 ];
 
