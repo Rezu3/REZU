@@ -1,161 +1,58 @@
 const gkQuestions = [
-    {
-        question: "1. The probability of the sample space S is:",
-        options: ["0", "1", "Depends on experiment", "Infinite"],
-        correctAnswer: 1
-    },
-    {
-        question: "2. A random variable that takes countable values is called:",
-        options: ["Continuous", "Discrete", "Mixed", "Constant"],
-        correctAnswer: 1
-    },
-    {
-        question: "3. Which of the following is an example of a continuous random variable?",
-        options: ["Number of students", "Number of heads in coin toss", "Height of a person", "Number of cars"],
-        correctAnswer: 2
-    },
-    {
-        question: "4. For a discrete random variable X, the sum of all probabilities is:",
-        options: ["0", "1", "Less than 1", "Greater than 1"],
-        correctAnswer: 1
-    },
-    {
-        question: "5. Probability density function (PDF) applies to:",
-        options: ["Discrete variables", "Continuous variables", "Both", "None"],
-        correctAnswer: 1
-    },
-    {
-        question: "6. The CDF of a random variable X is defined as:",
-        options: ["P(X = x)", "P(X ≥ x)", "P(X ≤ x)", "P(X > x)"],
-        correctAnswer: 2
-    },
-    {
-        question: "7. The limits of a CDF F(x) are:",
-        options: ["F(-∞)=1, F(∞)=0", "F(-∞)=0, F(∞)=1", "Both 0", "Both 1"],
-        correctAnswer: 1
-    },
-    {
-        question: "8. Which condition must a PDF satisfy?",
-        options: ["f(x) ≥ 0", "∫f(x)dx = 1", "Both A and B", "None"],
-        correctAnswer: 2
-    },
-    {
-        question: "9. Which is true for PMF?",
-        options: ["Defined for continuous variables", "Defined for discrete variables", "Always constant", "Always increasing"],
-        correctAnswer: 1
-    },
-    {
-        question: "10. Expectation of a discrete random variable is:",
-        options: ["∑xp(x)", "∫ x dx", "∑p(x)", "∫ p(x)dx"],
-        correctAnswer: 0
-    },
-    {
-        question: "11. If E(X) = 5, then E(2X) =",
-        options: ["5", "10", "2", "25"],
-        correctAnswer: 1
-    },
-    {
-        question: "12. If E(X) = 3, then E(X+4) =",
-        options: ["3", "4", "7", "12"],
-        correctAnswer: 2
-    },
-    {
-        question: "13. The r-th raw moment is:",
-        options: ["E(X^r)", "E((X−μ)^r)", "rX", "X^r"],
-        correctAnswer: 0
-    },
-    {
-        question: "14. The first raw moment about origin is:",
-        options: ["Variance", "Mean", "2 Variance", "None"],
-        correctAnswer: 1
-    },
-    {
-        question: "15. The second central moment represents:",
-        options: ["Mean", "Variance", "Expectation", "Median"],
-        correctAnswer: 1
-    },
-    {
-        question: "16. Variance is defined as:",
-        options: ["E(X)", "E(X²)", "E[(X−μ)²]", "(E(X))²"],
-        correctAnswer: 2
-    },
-    {
-        question: "17. Relation between variance and expectation:",
-        options: ["Var(X) = E(X²)−[E(X)]²", "Var(X) = E(X)", "Var(X) = E(X²)", "None"],
-        correctAnswer: 0
-    },
-    {
-        question: "18. If X is discrete with p(1)=0.3, p(2)=0.7, then E(X) =",
-        options: ["1.3", "1.7", "2", "0.7"],
-        correctAnswer: 1
-    },
-    {
-        question: "19. The total area under a PDF curve is:",
-        options: ["0", "1", "Infinite", "Depends"],
-        correctAnswer: 1
-    },
-    {
-        question: "20. The third central moment is related to:",
-        options: ["Mean", "Variance", "2 Raw Moment", "None"],
-        correctAnswer: 3
-    },
-    {
-        question: "21. If E(X)=4, E(X²)=20, then Var(X) =",
-        options: ["4", "16", "20", "36"],
-        correctAnswer: 0
-    },
-    {
-        question: "22. If Var(X)=9 then standard deviation is:",
-        options: ["3", "81", "6", "18"],
-        correctAnswer: 0
-    },
-    {
-        question: "23. If Y=3X, then Var(Y) =",
-        options: ["3Var(X)", "9Var(X)", "Var(X)", "6Var(X)"],
-        correctAnswer: 1
-    },
-    {
-        question: "24. Binomial distribution depends on parameters:",
-        options: ["n, p", "n, μ", "p, μ", "Only n"],
-        correctAnswer: 0
-    },
-    {
-        question: "25. Mean of a binomial distribution is:",
-        options: ["np", "n/p", "p/n", "n + p"],
-        correctAnswer: 0
-    },
-    {
-        question: "26. A binomial experiment requires:",
-        options: ["Infinite trials", "Independent trials", "Continuous outcomes", "Negative probabilities"],
-        correctAnswer: 1
-    },
-    {
-        question: "27. Mean and variance of Poisson distribution are:",
-        options: ["Both equal to μ", "Mean = μ, Variance = 2μ", "Mean = 2μ, Variance = μ", "Both zero"],
-        correctAnswer: 0
-    },
-    {
-        question: "28. X takes values 1,2,3 with probabilities 0.2,0.5,0.3. Find E(X):",
-        options: ["2.1", "3.2", "1.1", "None"],
-        correctAnswer: 0
-    },
-    {
-        question: "29. X takes values 1,2,3 with probabilities 0.2,0.5,0.3. Find Var(X):",
-        options: ["0.49", "0.42", "4.2", "4.9"],
-        correctAnswer: 0
-    },
-    {
-        question: "30. If mean=3, find third central moment:",
-        options: ["2", "0", "1", "4"],
-        correctAnswer: 1
-    },
-    {
-        question: "31. Second raw moment (X=1,2; p=0.6,0.4):",
-        options: ["3.2", "1.2", "2.2", "4.2"],
-        correctAnswer: 2
-    }
-];
+    { question: "আলো কী ধরনের শক্তি?", options: ["যান্ত্রিক শক্তি", "তড়িৎচৌম্বকীয় শক্তি", "শব্দ শক্তি", "রাসায়নিক শক্তি"], correctAnswer: 1 },
+    { question: "আলো সরলরেখায় চলার ঘটনাকে কী বলে?", options: ["প্রতিসরণ", "প্রতিফলন", "সরলরেখায় গমন", "বিচ্ছুরণ"], correctAnswer: 2 },
+    { question: "সমতল দর্পণে প্রতিবিম্ব কেমন হয়?", options: ["উল্টো", "সোজা ও সমান", "বড়", "ছোট"], correctAnswer: 1 },
+    { question: "প্রতিফলনের সূত্র কয়টি?", options: ["১টি", "২টি", "৩টি", "৪টি"], correctAnswer: 1 },
+    { question: "আপতন কোণ ও প্রতিফলন কোণের সম্পর্ক কী?", options: ["সমান", "বেশি", "কম", "নেই"], correctAnswer: 0 },
+    { question: "আয়নায় প্রতিবিম্ব সবসময় কোথায় গঠিত হয়?", options: ["বাস্তব", "ভার্চুয়াল", "উল্টো", "ছোট"], correctAnswer: 1 },
+    { question: "উত্তল দর্পণ কোথায় ব্যবহৃত হয়?", options: ["গাড়ির সাইড মিরর", "শেভিং", "দূরবীন", "মাইক্রোস্কোপ"], correctAnswer: 0 },
+    { question: "অবতল দর্পণ কোথায় ব্যবহৃত হয়?", options: ["সাইড মিরর", "শেভিং মিরর", "রাস্তার আয়না", "কোনোটিই নয়"], correctAnswer: 1 },
+    { question: "আলোর প্রতিসরণ ঘটে কখন?", options: ["মাধ্যম পরিবর্তনে", "একই মাধ্যমে", "অন্ধকারে", "কখনো নয়"], correctAnswer: 0 },
+    { question: "হালকা মাধ্যম থেকে ঘন মাধ্যমে গেলে রশ্মি?", options: ["লম্বের দিকে বাঁকে", "লম্ব থেকে দূরে", "সোজা", "থামে"], correctAnswer: 0 },
 
+    { question: "ঘন থেকে হালকা মাধ্যমে গেলে রশ্মি?", options: ["লম্বের দিকে", "লম্ব থেকে দূরে", "সোজা", "থামে"], correctAnswer: 1 },
+    { question: "সংকট কোণ কী?", options: ["আপতন কোণ", "প্রতিসরণ কোণ", "পূর্ণ প্রতিফলনের শুরু কোণ", "কোনোটিই নয়"], correctAnswer: 2 },
+    { question: "পূর্ণ অভ্যন্তরীণ প্রতিফলন কখন হয়?", options: ["ঘন→হালকা ও কোণ বেশি", "হালকা→ঘন", "সবসময়", "কখনো নয়"], correctAnswer: 0 },
+    { question: "লেন্স কত প্রকার?", options: ["১", "২", "৩", "৪"], correctAnswer: 1 },
+    { question: "উত্তল লেন্স কী করে?", options: ["রশ্মি ছড়ায়", "রশ্মি একত্র করে", "কোনোটিই নয়", "আলো বন্ধ করে"], correctAnswer: 1 },
+    { question: "অবতল লেন্স কী করে?", options: ["একত্র করে", "ছড়ায়", "আলো শোষণ করে", "প্রতিফলিত করে"], correctAnswer: 1 },
+    { question: "মানব চোখে কোন লেন্স থাকে?", options: ["উত্তল", "অবতল", "সমতল", "কোনোটিই নয়"], correctAnswer: 0 },
+    { question: "রেটিনা কোথায়?", options: ["চোখের সামনে", "মাঝে", "পেছনে", "বাইরে"], correctAnswer: 2 },
+    { question: "দৃষ্টিশক্তির ত্রুটি কোনটি?", options: ["মায়োপিয়া", "হাইপারমেট্রোপিয়া", "দুটোই", "কোনোটিই নয়"], correctAnswer: 2 },
+    { question: "মায়োপিয়া হলে কী দেখা যায়?", options: ["দূর", "কাছ", "দুটোই", "কোনোটিই নয়"], correctAnswer: 1 },
+
+    { question: "হাইপারমেট্রোপিয়া হলে?", options: ["কাছ", "দূর", "দুটোই", "কোনোটিই নয়"], correctAnswer: 1 },
+    { question: "প্রিজম কী করে?", options: ["প্রতিফলন", "বিচ্ছুরণ", "শোষণ", "কোনোটিই নয়"], correctAnswer: 1 },
+    { question: "রংধনু কীভাবে তৈরি হয়?", options: ["প্রতিফলন", "প্রতিসরণ", "বিচ্ছুরণ", "সবগুলো"], correctAnswer: 3 },
+    { question: "আলোর বেগ কোথায় সর্বাধিক?", options: ["বায়ু", "জল", "কাঁচ", "শূন্যস্থান"], correctAnswer: 3 },
+    { question: "ছায়া কেন হয়?", options: ["আলো সোজা চলে", "আলো বাঁকে", "আলো থামে", "কোনোটিই নয়"], correctAnswer: 0 },
+    { question: "অপেক বস্তু কী?", options: ["আলো যেতে দেয়", "আলো যেতে দেয় না", "আংশিক দেয়", "কোনোটিই নয়"], correctAnswer: 1 },
+    { question: "স্বচ্ছ বস্তু কী?", options: ["সব আলো যেতে দেয়", "দেয় না", "আংশিক", "কোনোটিই নয়"], correctAnswer: 0 },
+    { question: "অর্ধস্বচ্ছ বস্তু কী?", options: ["সব দেয়", "কিছু দেয়", "দেয় না", "কোনোটিই নয়"], correctAnswer: 1 },
+    { question: "সমতল দর্পণের ফোকাল দৈর্ঘ্য?", options: ["অসীম", "০", "১", "২"], correctAnswer: 0 },
+    { question: "আয়নায় ল্যাটারাল ইনভার্সন কী?", options: ["উল্টো", "ডান-বাম বদল", "বড়", "ছোট"], correctAnswer: 1 },
+
+    { question: "আলোর প্রতিফলন কী?", options: ["বাঁক", "ফিরে আসা", "ছড়ানো", "থামা"], correctAnswer: 1 },
+    { question: "নিয়মিত প্রতিফলন কোথায় হয়?", options: ["মসৃণ পৃষ্ঠে", "খসখসে", "জলে", "কোনোটিই নয়"], correctAnswer: 0 },
+    { question: "বিক্ষিপ্ত প্রতিফলন কোথায় হয়?", options: ["মসৃণ", "খসখসে", "আয়না", "কাঁচ"], correctAnswer: 1 },
+    { question: "আয়নার পেছনে ছবি হলে?", options: ["বাস্তব", "ভার্চুয়াল", "উল্টো", "বড়"], correctAnswer: 1 },
+    { question: "লেন্সের কেন্দ্রকে কী বলে?", options: ["ফোকাস", "অপটিক্যাল সেন্টার", "অক্ষ", "রশ্মি"], correctAnswer: 1 },
+    { question: "ফোকাস কী?", options: ["কেন্দ্র", "রশ্মির মিলন বিন্দু", "আয়না", "লেন্স"], correctAnswer: 1 },
+    { question: "মানব চোখে ছবি কোথায় পড়ে?", options: ["লেন্স", "রেটিনা", "করনিয়া", "আইরিস"], correctAnswer: 1 },
+    { question: "আইরিস কী নিয়ন্ত্রণ করে?", options: ["রং", "আলোর প্রবেশ", "ছবি", "দৃষ্টি"], correctAnswer: 1 },
+    { question: "পিউপিল কী?", options: ["লেন্স", "ছিদ্র", "রেটিনা", "নার্ভ"], correctAnswer: 1 },
+    { question: "চোখের লেন্স কেমন?", options: ["উত্তল", "অবতল", "সমতল", "কোনোটিই নয়"], correctAnswer: 0 },
+
+    { question: "ক্যামেরা কোন নীতিতে কাজ করে?", options: ["প্রতিফলন", "প্রতিসরণ", "দুটোই", "কোনোটিই নয়"], correctAnswer: 1 },
+    { question: "পেরিস্কোপ কী কাজে লাগে?", options: ["উপর দেখা", "নীচে দেখা", "চারদিকে দেখা", "কোনোটিই নয়"], correctAnswer: 0 },
+    { question: "দূরবীন কী?", options: ["লেন্স", "আয়না", "যন্ত্র", "কোনোটিই নয়"], correctAnswer: 2 },
+    { question: "মাইক্রোস্কোপ কী করে?", options: ["বড় করে", "ছোট করে", "রং বদলায়", "কোনোটিই নয়"], correctAnswer: 0 },
+    { question: "প্রতিসরণ সূচক কী?", options: ["বেগের অনুপাত", "দূরত্ব", "সময়", "কোনোটিই নয়"], correctAnswer: 0 },
+    { question: "আলো কোন মাধ্যমে ধীর?", options: ["বায়ু", "জল", "কাঁচ", "শূন্য"], correctAnswer: 2 },
+    { question: "আলো কী?", options: ["তরঙ্গ", "কণা", "দুটোই", "কোনোটিই নয়"], correctAnswer: 2 },
+    { question: "ছায়ার আকার কিসে বদলায়?", options: ["দূরত্ব", "আলো", "বস্তু", "সব"], correctAnswer: 3 },
+    { question: "গ্রহণ কী?", options: ["ছায়া", "আলো", "রং", "লেন্স"], correctAnswer: 0 }
+];
 
 
 
