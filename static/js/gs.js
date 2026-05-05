@@ -509,7 +509,7 @@ document.addEventListener('DOMContentLoaded', function() {
             questionTimer.stopTimer();
         }
         
-        questionTimer = initTimer(30, onTimeUp);
+        questionTimer = initTimer(60, onTimeUp);
         if (questionTimer) {
             questionTimer.startTimer();
         }
