@@ -1,4 +1,4 @@
-const physicsQuestions = [
+const gkQuestions = [
     {
         question: "1. যদি কোনো বস্তু সমবেগে চলতে থাকে, তাহলে তার ত্বরণ কত হবে?",
         options: ["ধ্রুবক", "বাড়তে থাকে", "0", "কমতে থাকে"],
