@@ -1,256 +1,255 @@
 const gkQuestions = [
     {
         question: "1. যদি কোনো বস্তু সমবেগে চলতে থাকে, তাহলে তার ত্বরণ কত হবে?",
-        options: ["ধ্রুবক", "বাড়তে থাকে", "0", "কমতে থাকে"],
-        correctAnswer: 2 // 0
+        options: ["0", "ধ্রুবক", "বাড়তে থাকে", "কমতে থাকে"],
+        correctAnswer: 0
     },
     {
         question: "2. সরণ (Displacement) একটি —",
-        options: ["ভেক্টর রাশি", "স্কেলার রাশি", "উভয়ই", "কোনোটিই নয়"],
-        correctAnswer: 0 // ভেক্টর রাশি
+        options: ["স্কেলার রাশি", "ভেক্টর রাশি", "উভয়ই", "কোনোটিই নয়"],
+        correctAnswer: 1
     },
     {
         question: "3. গড় দ্রুতি নির্ণয় করা হয় —",
-        options: ["মোট সরণ / সময়", "দূরত্ব / সরণ", "সময় / দূরত্ব", "মোট দূরত্ব / মোট সময়"],
-        correctAnswer: 3 // মোট দূরত্ব / মোট সময়
+        options: ["মোট সরণ / সময়", "মোট দূরত্ব / মোট সময়", "দূরত্ব / সরণ", "সময় / দূরত্ব"],
+        correctAnswer: 1
     },
     {
         question: "4. যদি কোনো বস্তু বৃত্তাকার পথে সমবেগে চলে, তবে তার বেগ —",
         options: ["ধ্রুবক", "পরিবর্তনশীল", "শূন্য", "অসীম"],
-        correctAnswer: 1 // পরিবর্তনশীল
+        correctAnswer: 1
     },
     {
         question: "5. নিউটনের প্রথম সূত্র কী বোঝায়?",
-        options: ["বল ও ত্বরণ সম্পর্ক", "ভরবেগ", "জাড্য", "কার্য"],
-        correctAnswer: 2 // জাড্য
+        options: ["বল ও ত্বরণ সম্পর্ক", "জাড্য", "ভরবেগ", "কার্য"],
+        correctAnswer: 1
     },
     {
         question: "6. ভরবেগের একক কী?",
-        options: ["N", "kg m/s", "J", "W"],
-        correctAnswer: 1 // kg m/s
+        options: ["kg m/s", "N", "J", "W"],
+        correctAnswer: 0
     },
     {
         question: "7. কোনো বস্তু স্থির থাকলে তার দ্রুতি —",
-        options: ["0", "অসীম", "ধনাত্মক", "ঋণাত্মক"],
-        correctAnswer: 0 // 0
+        options: ["অসীম", "ধনাত্মক", "0", "ঋণাত্মক"],
+        correctAnswer: 2
     },
     {
         question: "8. ত্বরণ নির্ণয় করা হয় —",
-        options: ["বেগ × সময়", "বেগের পরিবর্তন / সময়", "বেগ / সময়", "দূরত্ব / সময়"],
-        correctAnswer: 1 // বেগের পরিবর্তন / সময়
+        options: ["বেগ × সময়", "বেগ / সময়", "বেগের পরিবর্তন / সময়", "দূরত্ব / সময়"],
+        correctAnswer: 2
     },
     {
         question: "9. মন্দন বলতে বোঝায় —",
-        options: ["বেগ বৃদ্ধি", "দূরত্ব বৃদ্ধি", "সময় বৃদ্ধি", "বেগ হ্রাস"],
-        correctAnswer: 3 // বেগ হ্রাস
+        options: ["বেগ বৃদ্ধি", "বেগ হ্রাস", "দূরত্ব বৃদ্ধি", "সময় বৃদ্ধি"],
+        correctAnswer: 1
     },
     {
         question: "10. নিউটনের দ্বিতীয় সূত্র অনুযায়ী বল =",
-        options: ["ma", "m/a", "mv", "v/t"],
-        correctAnswer: 0 // ma
+        options: ["m/a", "ma", "mv", "v/t"],
+        correctAnswer: 1
     },
     {
         question: "11. ভরবেগ =",
-        options: ["ma", "m/v", "mv", "v/m"],
-        correctAnswer: 2 // mv
+        options: ["mv", "ma", "m/v", "v/m"],
+        correctAnswer: 0
     },
     {
         question: "12. কার্য (Work) এর একক —",
-        options: ["J", "N", "W", "kg"],
-        correctAnswer: 0 // J
+        options: ["N", "J", "W", "kg"],
+        correctAnswer: 1
     },
     {
         question: "13. যদি বল প্রয়োগ করা হয় কিন্তু সরণ না হয়, তবে কার্য —",
-        options: ["ধনাত্মক", "ঋণাত্মক", "অসীম", "শূন্য"],
-        correctAnswer: 3 // শূন্য
+        options: ["ধনাত্মক", "ঋণাত্মক", "শূন্য", "অসীম"],
+        correctAnswer: 2
     },
     {
         question: "14. ক্ষমতা (Power) =",
-        options: ["Work × Time", "Time / Work", "Work / Time", "Force × Distance"],
-        correctAnswer: 2 // Work / Time
+        options: ["Work × Time", "Work / Time", "Time / Work", "Force × Distance"],
+        correctAnswer: 1
     },
     {
         question: "15. জাড্য নির্ভর করে —",
-        options: ["ভর", "দ্রুতি", "সময়", "দূরত্ব"],
-        correctAnswer: 0 // ভর
+        options: ["দ্রুতি", "ভর", "সময়", "দূরত্ব"],
+        correctAnswer: 1
     },
     {
         question: "16. বেগ একটি —",
-        options: ["স্কেলার", "উভয়ই", "ভেক্টর", "কোনোটিই নয়"],
-        correctAnswer: 2 // ভেক্টর
+        options: ["স্কেলার", "ভেক্টর", "উভয়ই", "কোনোটিই নয়"],
+        correctAnswer: 1
     },
     {
         question: "17. গড় বেগ =",
         options: ["মোট সরণ / মোট সময়", "মোট দূরত্ব / সময়", "দূরত্ব / সরণ", "সময় / সরণ"],
-        correctAnswer: 0 // মোট সরণ / মোট সময়
+        correctAnswer: 0
     },
     {
         question: "18. নিউটনের তৃতীয় সূত্র বলে —",
-        options: ["জাড্য", "প্রত্যেক ক্রিয়ার সমান ও বিপরীত প্রতিক্রিয়া আছে", "F=ma", "ভরবেগ"],
-        correctAnswer: 1 // প্রত্যেক ক্রিয়ার সমান ও বিপরীত প্রতিক্রিয়া আছে
+        options: ["F=ma", "প্রত্যেক ক্রিয়ার সমান ও বিপরীত প্রতিক্রিয়া আছে", "জাড্য", "ভরবেগ"],
+        correctAnswer: 1
     },
     {
         question: "19. শক্তির একক —",
-        options: ["N", "W", "kg", "J"],
-        correctAnswer: 3 // J
+        options: ["N", "J", "W", "kg"],
+        correctAnswer: 1
     },
     {
         question: "20. ক্ষমতার একক —",
-        options: ["W", "J", "N", "kg"],
-        correctAnswer: 0 // W
+        options: ["J", "W", "N", "kg"],
+        correctAnswer: 1
     },
     {
         question: "21. যদি বেগ অপরিবর্তিত থাকে, তবে ত্বরণ —",
-        options: ["0", "ধনাত্মক", "ঋণাত্মক", "অসীম"],
-        correctAnswer: 0 // 0
+        options: ["ধনাত্মক", "ঋণাত্মক", "0", "অসীম"],
+        correctAnswer: 2
     },
     {
         question: "22. দূরত্ব একটি —",
-        options: ["ভেক্টর", "উভয়ই", "কোনোটিই নয়", "স্কেলার"],
-        correctAnswer: 3 // স্কেলার
+        options: ["ভেক্টর", "স্কেলার", "উভয়ই", "কোনোটিই নয়"],
+        correctAnswer: 1
     },
     {
         question: "23. বলের একক —",
-        options: ["J", "W", "N", "kg"],
-        correctAnswer: 2 // N
+        options: ["J", "N", "W", "kg"],
+        correctAnswer: 1
     },
     {
         question: "24. ভরবেগের পরিবর্তন =",
-        options: ["বল / সময়", "বল × সময়", "সময় / বল", "দূরত্ব × সময়"],
-        correctAnswer: 1 // বল × সময়
+        options: ["বল × সময়", "বল / সময়", "সময় / বল", "দূরত্ব × সময়"],
+        correctAnswer: 0
     },
     {
         question: "25. সমবেগে গতি হলে —",
-        options: ["ত্বরণ আছে", "দূরত্ব নেই", "ত্বরণ নেই", "সময় নেই"],
-        correctAnswer: 2 // ত্বরণ নেই
+        options: ["ত্বরণ আছে", "ত্বরণ নেই", "দূরত্ব নেই", "সময় নেই"],
+        correctAnswer: 1
     },
     {
         question: "26. শক্তি =",
-        options: ["ক্ষমতা × সময়", "বল × সময়", "দূরত্ব / সময়", "কার্য"],
-        correctAnswer: 3 // কার্য (বা ক্ষমতা × সময় উভয়ই সঠিক, তবে আগের লিস্ট অনুযায়ী কার্য রাখা হলো)
+        options: ["ক্ষমতা × সময়", "কার্য", "বল × সময়", "দূরত্ব / সময়"],
+        correctAnswer: 1
     },
     {
         question: "27. সরণ কখন শূন্য হয়?",
-        options: ["প্রারম্ভ ও শেষ অবস্থান এক হলে", "যখন দূরত্ব শূন্য", "সময় শূন্য হলে", "বেগ শূন্য হলে"],
-        correctAnswer: 0 // প্রারম্ভ ও শেষ অবস্থান এক হলে
+        options: ["যখন দূরত্ব শূন্য", "প্রারম্ভ ও শেষ অবস্থান এক হলে", "সময় শূন্য হলে", "বেগ শূন্য হলে"],
+        correctAnswer: 1
     },
     {
         question: "28. বেগ পরিবর্তন হলে —",
-        options: ["ত্বরণ শূন্য", "দূরত্ব শূন্য", "সময় শূন্য", "ত্বরণ হয়"],
-        correctAnswer: 3 // ত্বরণ হয়
+        options: ["ত্বরণ শূন্য", "ত্বরণ হয়", "দূরত্ব শূন্য", "সময় শূন্য"],
+        correctAnswer: 1
     },
     {
         question: "29. কাজের সূত্র —",
-        options: ["F / s", "F × s", "s / F", "F × t"],
-        correctAnswer: 1 // F × s
+        options: ["F × s", "F / s", "s / F", "F × t"],
+        correctAnswer: 0
     },
     {
         question: "30. ক্ষমতা বেশি মানে —",
-        options: ["কম কাজ", "কম সময়", "বেশি কাজ কম সময়ে", "কোনোটিই নয়"],
-        correctAnswer: 2 // বেশি কাজ কম সময়ে
+        options: ["কম কাজ", "বেশি কাজ কম সময়ে", "কম সময়", "কোনোটিই নয়"],
+        correctAnswer: 1
     },
     {
         question: "31. বৃত্তাকার গতি হলে ত্বরণ —",
-        options: ["কেন্দ্রাভিমুখী", "শূন্য", "বাইরের দিকে", "অনির্দিষ্ট"],
-        correctAnswer: 0 // কেন্দ্রাভিমুখী
+        options: ["শূন্য", "কেন্দ্রাভিমুখী", "বাইরের দিকে", "অনির্দিষ্ট"],
+        correctAnswer: 1
     },
     {
         question: "32. জাড্য বেশি হলে —",
-        options: ["গতি সহজে বদলায়", "ত্বরণ বেশি", "গতি বদলানো কঠিন", "দূরত্ব কম"],
-        correctAnswer: 2 // গতি বদলানো কঠিন
+        options: ["গতি সহজে বদলায়", "গতি বদলানো কঠিন", "ত্বরণ বেশি", "দূরত্ব কম"],
+        correctAnswer: 1
     },
     {
         question: "33. ভর বেশি হলে —",
         options: ["জাড্য কম", "জাড্য বেশি", "ত্বরণ বেশি", "সময় কম"],
-        correctAnswer: 1 // জাড্য বেশি
+        correctAnswer: 1
     },
     {
         question: "34. বল না থাকলে —",
-        options: ["গতি পরিবর্তন হয়", "দূরত্ব কমে", "সময় থামে", "গতি অপরিবর্তিত থাকে"],
-        correctAnswer: 3 // গতি অপরিবর্তিত থাকে
+        options: ["গতি পরিবর্তন হয়", "গতি অপরিবর্তিত থাকে", "দূরত্ব কমে", "সময় থামে"],
+        correctAnswer: 1
     },
     {
         question: "35. বেগ =",
         options: ["দূরত্ব/সময়", "সরণ/সময়", "সময়/দূরত্ব", "সরণ×সময়"],
-        correctAnswer: 1 // সরণ/সময়
+        correctAnswer: 1
     },
     {
         question: "36. গড় দ্রুতি ও গড় বেগ সমান হয় যখন —",
         options: ["পথ সরলরেখা", "বেগ শূন্য", "সময় শূন্য", "দূরত্ব শূন্য"],
-        correctAnswer: 0 // পথ সরলরেখা
+        correctAnswer: 0
     },
     {
         question: "37. শক্তি সংরক্ষণ সূত্র বলে —",
         options: ["শক্তি সৃষ্টি হয়", "শক্তি নষ্ট হয়", "শক্তি অপরিবর্তিত থাকে", "শক্তি দ্বিগুণ হয়"],
-        correctAnswer: 2 // শক্তি অপরিবর্তিত থাকে
+        correctAnswer: 2
     },
     {
         question: "38. যদি সময় কম লাগে, ক্ষমতা —",
         options: ["কম", "বেশি", "শূন্য", "অসীম"],
-        correctAnswer: 1 // বেশি
+        correctAnswer: 1
     },
     {
         question: "39. বল প্রয়োগ করলে —",
-        options: ["সবসময় গতি হবে", "সময় কমে", "গতি পরিবর্তন হতে পারে", "দূরত্ব শূন্য"],
-        correctAnswer: 2 // গতি পরিবর্তন হতে পারে
+        options: ["সবসময় গতি হবে", "গতি পরিবর্তন হতে পারে", "সময় কমে", "দূরত্ব শূন্য"],
+        correctAnswer: 1
     },
     {
         question: "40. ভেক্টর রাশির উদাহরণ —",
-        options: ["দূরত্ব", "সময়", "ভর", "বেগ"],
-        correctAnswer: 3 // বেগ
+        options: ["দূরত্ব", "বেগ", "সময়", "ভর"],
+        correctAnswer: 1
     },
     {
         question: "41. স্কেলার রাশির উদাহরণ —",
         options: ["বেগ", "সরণ", "দূরত্ব", "ত্বরণ"],
-        correctAnswer: 2 // দূরত্ব
+        correctAnswer: 2
     },
     {
         question: "42. বল = ভর × —",
-        options: ["দ্রুতি", "সময়", "দূরত্ব", "ত্বরণ"],
-        correctAnswer: 3 // ত্বরণ
+        options: ["দ্রুতি", "ত্বরণ", "সময়", "দূরত্ব"],
+        correctAnswer: 1
     },
     {
         question: "43. কাজ শূন্য হয় যখন —",
-        options: ["সরণ নেই", "বল নেই", "সময় নেই", "ভর নেই"],
-        correctAnswer: 0 // সরণ নেই
+        options: ["বল নেই", "সরণ নেই", "সময় নেই", "ভর নেই"],
+        correctAnswer: 1
     },
     {
         question: "44. শক্তি বেশি হলে —",
         options: ["কাজ কম", "কাজ বেশি", "সময় কম", "দূরত্ব কম"],
-        correctAnswer: 1 // কাজ বেশি
+        correctAnswer: 1
     },
     {
         question: "45. ত্বরণ ধনাত্মক হলে —",
         options: ["বেগ বাড়ে", "বেগ কমে", "বেগ শূন্য", "কিছুই না"],
-        correctAnswer: 0 // বেগ বাড়ে
+        correctAnswer: 0
     },
     {
         question: "46. ত্বরণ ঋণাত্মক হলে —",
-        options: ["বেগ বাড়ে", "স্থির থাকে", "বেগ শূন্য", "বেগ কমে"],
-        correctAnswer: 3 // বেগ কমে
+        options: ["বেগ বাড়ে", "বেগ কমে", "বেগ শূন্য", "স্থির থাকে"],
+        correctAnswer: 1
     },
     {
         question: "47. সময়ের একক —",
-        options: ["m", "kg", "s", "N"],
-        correctAnswer: 2 // s
+        options: ["m", "s", "kg", "N"],
+        correctAnswer: 1
     },
     {
         question: "48. দূরত্বের একক —",
         options: ["m", "s", "kg", "J"],
-        correctAnswer: 0 // m
+        correctAnswer: 0
     },
     {
         question: "49. ভর এর একক —",
-        options: ["N", "m", "s", "kg"],
-        correctAnswer: 3 // kg
+        options: ["N", "kg", "m", "s"],
+        correctAnswer: 1
     },
     {
         question: "50. বল প্রয়োগের ফলে —",
         options: ["আকার বদলায়", "গতি বদলায়", "উভয়ই", "কোনোটিই নয়"],
-        correctAnswer: 2 // উভয়ই
+        correctAnswer: 2
     }
 ];
-
 
 
 
