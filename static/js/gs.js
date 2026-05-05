@@ -250,7 +250,7 @@ const gkQuestions = [
         correctAnswer: 2 // উভয়ই
     }
 ];
-, 
+
 
 
 
