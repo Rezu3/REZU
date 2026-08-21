@@ -1,302 +1,343 @@
 /* ==========================================
-   GLOBAL & RESET STYLES
+   GLOBAL RESET & MOBILE-FIRST BASE
    ========================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-tap-highlight-color: transparent;
+    user-select: none; /* মোবাইল অ্যাপের মতো ফিল দেওয়ার জন্য */
 }
 
 body {
-    background-color: #f4f7fe;
-    color: #2b3674;
+    background-color: #f0f3f9;
+    color: #1a202c;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 /* ==========================================
-   HEADER & NAVBAR
+   HEADER (APP BAR)
    ========================================== */
 .app-header {
-    background-color: #ffffff;
-    padding: 15px 25px;
+    background: #ffffff;
+    padding: 12px 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .logo-container {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .logo-container h1 {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    color: #4318ff;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .fullscreen-btn {
-    background-color: #f4f7fe;
-    color: #4318ff;
-    border: 1px solid #e0e5f2;
-    padding: 8px 16px;
-    border-radius: 10px;
+    background: #eef2ff;
+    color: #4f46e5;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
     transition: all 0.2s ease;
 }
 
-.fullscreen-btn:hover {
-    background-color: #4318ff;
-    color: #ffffff;
+.fullscreen-btn:active {
+    transform: scale(0.95);
+    background: #e0e7ff;
 }
 
 /* ==========================================
    MAIN CONTAINER & BREADCRUMB
    ========================================== */
 .main-container {
-    max-width: 900px;
     width: 100%;
-    margin: 20px auto;
-    padding: 0 15px;
+    max-width: 600px; /* মোবাইল স্ক্রিনের জন্য অপটিমাইজড */
+    margin: 0 auto;
+    padding: 12px 16px 80px 16px; /* নিচে স্পেস রাখা হয়েছে বটম কন্ট্রোলের জন্য */
     flex: 1;
 }
 
 .breadcrumb {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.95rem;
-    color: #a3edde;
-    margin-bottom: 20px;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 14px;
     background: #ffffff;
-    padding: 10px 18px;
+    padding: 10px 14px;
     border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 .breadcrumb span[id^="bc-"] {
-    color: #4318ff;
+    color: #4f46e5;
     font-weight: 600;
     cursor: pointer;
 }
 
-.breadcrumb span[id^="bc-"]:hover {
-    text-decoration: underline;
-}
-
 .breadcrumb .separator {
-    color: #a32aee;
-    font-weight: 400;
+    color: #94a3b8;
 }
 
 /* ==========================================
-   DYNAMIC VIEWS & GRID CARDS
+   DYNAMIC VIEWS & MOBILE CARDS
    ========================================== */
 .view-section {
     display: none;
-    animation: fadeIn 0.3s ease-in-out;
+    animation: slideUp 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .view-section.active {
     display: block;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 .view-section h2 {
-    font-size: 1.3rem;
-    margin-bottom: 18px;
-    color: #1b2559;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #334155;
+    padding-left: 4px;
 }
 
+/* মোবাইল-বান্ধব কার্ড গ্রিড */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 16px;
+    grid-template-columns: 1fr; /* মোবাইলে সিঙ্গেল কলাম */
+    gap: 12px;
 }
 
 .card {
     background: #ffffff;
-    padding: 20px;
+    padding: 16px 20px;
     border-radius: 16px;
-    border: 1px solid #e9edf7;
-    box-shadow: 0px 4px 12px rgba(112, 144, 176, 0.08);
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
     cursor: pointer;
-    text-align: center;
-    font-size: 1.1rem;
+    text-align: left;
+    font-size: 1rem;
     font-weight: 600;
-    color: #1b2559;
-    transition: all 0.2s ease-in-out;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.15s ease;
 }
 
-.card:hover {
-    transform: translateY(-4px);
-    border-color: #4318ff;
-    box-shadow: 0px 10px 20px rgba(67, 24, 255, 0.12);
-    color: #4318ff;
+.card::after {
+    content: "›";
+    font-size: 1.4rem;
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.card:active {
+    transform: scale(0.98);
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
 }
 
 /* ==========================================
-   QUIZ VIEW SECTION
+   QUIZ VIEW SECTION (MOBILE APP UI)
    ========================================== */
 .quiz-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+    padding: 0 2px;
+}
+
+.quiz-header h3 {
+    font-size: 1rem;
+    color: #475569;
+    font-weight: 600;
 }
 
 .quiz-progress {
-    background: #e9edf7;
-    color: #4318ff;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    background: #e0e7ff;
+    color: #4338ca;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
 }
 
 .quiz-card {
     background: #ffffff;
-    padding: 25px;
+    padding: 18px;
     border-radius: 20px;
-    box-shadow: 0px 8px 24px rgba(112, 144, 176, 0.1);
-    margin-bottom: 20px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 16px;
 }
 
 .question-text {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-weight: 600;
-    color: #1b2559;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    color: #0f172a;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    user-select: text; /* প্রশ্ন কপি করার জন্য উন্মুক্ত */
 }
 
-/* MATHJAX DISPLAY CORRECTION */
+/* MathJax Formatting */
 .question-text .MathJax {
-    font-size: 1.1em !important;
+    font-size: 1.05em !important;
 }
 
 .image-container {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    background: #f8fafc;
+    padding: 8px;
+    border-radius: 12px;
 }
 
 .image-container img {
     max-width: 100%;
-    max-height: 280px;
-    border-radius: 12px;
-    border: 1px solid #e0e5f2;
+    max-height: 220px;
+    border-radius: 8px;
     object-fit: contain;
 }
 
-/* OPTIONS GRID */
+/* OPTIONS LIST (TOUCH FRIENDLY) */
 .options-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .option-btn {
-    background: #f4f7fe;
-    border: 2px solid #e9edf7;
-    padding: 14px 18px;
-    border-radius: 12px;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    padding: 14px 16px;
+    border-radius: 14px;
     text-align: left;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    color: #2b3674;
+    color: #334155;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.15s ease;
     display: flex;
     align-items: center;
+    line-height: 1.4;
+    user-select: text;
 }
 
-.option-btn:hover {
-    background: #e9edf7;
-    border-color: #c8d3f5;
+.option-btn:active {
+    transform: scale(0.99);
 }
 
-/* SELECTED AND ANSWER STATES */
 .option-btn.selected {
     background: #e0e7ff;
-    border-color: #4318ff;
-    color: #4318ff;
+    border-color: #4f46e5;
+    color: #3730a3;
     font-weight: 600;
 }
 
 .option-btn.correct {
-    background: #d1fae5;
-    border-color: #10b981;
-    color: #065f46;
+    background: #dcfce7;
+    border-color: #22c55e;
+    color: #14532d;
+    font-weight: 600;
 }
 
 .option-btn.wrong {
     background: #fee2e2;
     border-color: #ef4444;
-    color: #991b1b;
+    color: #7f1d1d;
+    font-weight: 600;
 }
 
 /* ==========================================
-   QUIZ NAVIGATION BUTTONS
+   BOTTOM FIXED FOOTER BUTTONS
    ========================================== */
 .quiz-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    padding: 12px 16px;
     display: flex;
-    justify-content: space-between;
-    gap: 15px;
+    gap: 12px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+    z-index: 999;
 }
 
 .nav-btn {
     flex: 1;
     padding: 12px;
     border: none;
-    border-radius: 12px;
-    font-size: 1rem;
+    border-radius: 14px;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    background: #e0e5f2;
-    color: #2b3674;
-    transition: all 0.2s ease;
+    background: #f1f5f9;
+    color: #475569;
+    transition: all 0.15s ease;
 }
 
 .nav-btn.primary {
-    background: #4318ff;
+    background: #4f46e5;
     color: #ffffff;
 }
 
-.nav-btn.primary:hover {
-    background: #3311cc;
+.nav-btn:active {
+    transform: scale(0.97);
 }
 
 .nav-btn:disabled {
-    opacity: 0.5;
+    opacity: 0.4;
     cursor: not-allowed;
+    transform: none;
 }
 
-/* RESPONSIVE DESIGN FOR MOBILE */
-@media (max-width: 600px) {
-    .app-header {
-        padding: 12px 15px;
-    }
-    .logo-container h1 {
-        font-size: 1.2rem;
-    }
-    .fullscreen-btn {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
+/* ==========================================
+   DESKTOP / TABLET ADAPTATION
+   ========================================== */
+@media (min-width: 640px) {
     .cards-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr); /* ট্যাবলেটে ২টি কলাম */
+    }
+    .quiz-footer {
+        position: static; /* ডেক্সটপে নিচে ফিক্সড থাকবে না */
+        box-shadow: none;
+        background: transparent;
+        padding: 0;
+        margin-top: 10px;
+    }
+    .main-container {
+        padding-bottom: 24px;
     }
 }
