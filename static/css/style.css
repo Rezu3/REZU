@@ -1,0 +1,302 @@
+/* ==========================================
+   GLOBAL & RESET STYLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #f4f7fe;
+    color: #2b3674;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================
+   HEADER & NAVBAR
+   ========================================== */
+.app-header {
+    background-color: #ffffff;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-container {
+    cursor: pointer;
+}
+
+.logo-container h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #4318ff;
+}
+
+.fullscreen-btn {
+    background-color: #f4f7fe;
+    color: #4318ff;
+    border: 1px solid #e0e5f2;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.fullscreen-btn:hover {
+    background-color: #4318ff;
+    color: #ffffff;
+}
+
+/* ==========================================
+   MAIN CONTAINER & BREADCRUMB
+   ========================================== */
+.main-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 15px;
+    flex: 1;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #a3edde;
+    margin-bottom: 20px;
+    background: #ffffff;
+    padding: 10px 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.breadcrumb span[id^="bc-"] {
+    color: #4318ff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.breadcrumb span[id^="bc-"]:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb .separator {
+    color: #a32aee;
+    font-weight: 400;
+}
+
+/* ==========================================
+   DYNAMIC VIEWS & GRID CARDS
+   ========================================== */
+.view-section {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.view-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.view-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+    color: #1b2559;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #e9edf7;
+    box-shadow: 0px 4px 12px rgba(112, 144, 176, 0.08);
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1b2559;
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #4318ff;
+    box-shadow: 0px 10px 20px rgba(67, 24, 255, 0.12);
+    color: #4318ff;
+}
+
+/* ==========================================
+   QUIZ VIEW SECTION
+   ========================================== */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.quiz-progress {
+    background: #e9edf7;
+    color: #4318ff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.quiz-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 24px rgba(112, 144, 176, 0.1);
+    margin-bottom: 20px;
+}
+
+.question-text {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1b2559;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* MATHJAX DISPLAY CORRECTION */
+.question-text .MathJax {
+    font-size: 1.1em !important;
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 280px;
+    border-radius: 12px;
+    border: 1px solid #e0e5f2;
+    object-fit: contain;
+}
+
+/* OPTIONS GRID */
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.option-btn {
+    background: #f4f7fe;
+    border: 2px solid #e9edf7;
+    padding: 14px 18px;
+    border-radius: 12px;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2b3674;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.option-btn:hover {
+    background: #e9edf7;
+    border-color: #c8d3f5;
+}
+
+/* SELECTED AND ANSWER STATES */
+.option-btn.selected {
+    background: #e0e7ff;
+    border-color: #4318ff;
+    color: #4318ff;
+    font-weight: 600;
+}
+
+.option-btn.correct {
+    background: #d1fae5;
+    border-color: #10b981;
+    color: #065f46;
+}
+
+.option-btn.wrong {
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #991b1b;
+}
+
+/* ==========================================
+   QUIZ NAVIGATION BUTTONS
+   ========================================== */
+.quiz-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.nav-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: #e0e5f2;
+    color: #2b3674;
+    transition: all 0.2s ease;
+}
+
+.nav-btn.primary {
+    background: #4318ff;
+    color: #ffffff;
+}
+
+.nav-btn.primary:hover {
+    background: #3311cc;
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* RESPONSIVE DESIGN FOR MOBILE */
+@media (max-width: 600px) {
+    .app-header {
+        padding: 12px 15px;
+    }
+    .logo-container h1 {
+        font-size: 1.2rem;
+    }
+    .fullscreen-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
